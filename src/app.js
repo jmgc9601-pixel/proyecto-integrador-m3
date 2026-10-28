@@ -5,7 +5,8 @@ const app = document.querySelector("#app");
 const navegacion = document.querySelector("#navegacion");
 
 function obtenerRuta() {
-    const ruta = window.location.pathname.replace(/\/+$/, "");
+    const ruta = window.location.pathname
+        .replace(/\/+$/, "");
     return ruta || "/";
 }
 
@@ -86,43 +87,46 @@ function renderizarVista() {
     }
 }
 
-if (navegacion) {
-    navegacion.addEventListener("click", (evento) => {
+document.addEventListener("click", (evento) => {
+   
+    const enlace = evento.target.closest("a");
 
-        if (
-            evento.defaultPrevented ||
-            evento.button !== 0 ||
-            evento.metaKey ||
-            evento.ctrlKey ||
-            evento.shiftKey ||
-            evento.altKey
-        ) {
-            return;
-        }
+    if (!enlace) return;
 
-        const enlace = evento.target.closest("a");
+    if (
+        evento.defaultPrevented ||
+        evento.button !== 0 ||
+        evento.metaKey ||
+        evento.ctrlKey ||
+        evento.shiftKey ||
+        evento.altKey
+    ) {
+        return;
+    }
 
-        if (!enlace || !navegacion.contains(enlace)) return;
+    if (
+        enlace.origin !== window.location.origin ||
+        enlace.target ||
+        enlace.hasAttribute("download")
+    ) {
+        return;
+    }
 
-        if (
-            enlace.origin !== window.location.origin ||
-            enlace.target ||
-            enlace.hasAttribute("download")
-        ) {
-            return;
-        }
+    evento.preventDefault();
 
-        evento.preventDefault();
+    const nuevaRuta =
+        enlace.pathname + enlace.search + enlace.hash;
 
-        const nuevaRuta = enlace.pathname + enlace.search + enlace.hash;
+    const rutaActual =
+        window.location.pathname +
+        window.location.search +
+        window.location.hash;
 
-        if (nuevaRuta !== window.location.pathname +
-            window.location.search + window.location.hash) {
-            history.pushState({}, "", nuevaRuta);
-            renderizarVista();
-        }
-    });
-}
+    if (nuevaRuta !== rutaActual) {
+        history.pushState({}, "", nuevaRuta);
+        renderizarVista();
+    }
+});
 
 window.addEventListener("popstate", renderizarVista);
 

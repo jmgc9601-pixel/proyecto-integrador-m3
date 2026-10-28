@@ -44,12 +44,6 @@ export default async function handler(req, res) {
                 role: item.role,
                 parts: [{ text: item.text.slice(0, 2000) }]
             }));
-
-         const inicio = Date.now();
-            console.log("Iniciando solicitud a Gemini");
-            
-         console.log(`Gemini respondió en ${Date.now() - inicio} ms`);
-         
          
         const response = await ai.models.generateContent({
             model: "gemini-3.8-flash",

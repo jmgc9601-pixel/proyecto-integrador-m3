@@ -1,4 +1,3 @@
-
 const historial = [];
 
 export function inicializarChat() {
@@ -7,6 +6,10 @@ export function inicializarChat() {
     const mensajes = document.querySelector("#mensajes");
     const estado = document.querySelector("#estado-chat");
     const boton = document.querySelector("#boton-enviar");
+
+if (!formulario || !entrada || !mensajes || !estado || !boton) {
+    return;
+}
 
     mensajes.innerHTML = "";
 
@@ -21,12 +24,6 @@ export function inicializarChat() {
 
         if (!texto) return;
 
-     
-        historial.push({
-            texto,
-            tipo: "usuario"
-        });
-
         agregarMensaje(mensajes, texto, "usuario");
 
         entrada.value = "";
@@ -35,7 +32,7 @@ export function inicializarChat() {
         estado.textContent = "Procesando misión...";
 
         
-        const contexto = historial.slice(0, -1).map((mensaje) => ({
+        const contexto = historial.map((mensaje) => ({
             role: mensaje.tipo === "usuario" ? "user" : "model",
             text: mensaje.texto
         }));
@@ -60,9 +57,14 @@ export function inicializarChat() {
 
             const respuesta = datos.respuesta;
 
-            historial.push({
-                texto: respuesta,
-                tipo: "sistema"
+                historial.push({
+                    texto,
+                    tipo: "usuario"
+                });
+
+                historial.push({
+                    texto: respuesta,
+                    tipo: "sistema"
             });
 
             agregarMensaje(mensajes, respuesta, "sistema");
