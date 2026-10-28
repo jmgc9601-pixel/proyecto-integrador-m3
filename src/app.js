@@ -89,25 +89,26 @@ function renderizarVista() {
                        El Jefe Maestro, cuyo nombre es John-117, es uno de los supersoldados 
                        Spartan-II más reconocidos del universo de Halo. Entrenado desde temprana 
                        edad bajo el programa Spartan-II, fue convertido en un soldado de élite 
-                       mediante un riguroso entrenamiento y avanzadas mejoras físicas.
+                       mediante un riguroso entrenamiento y avanzadas mejoras físicas.<br>
 
                        Conocido por su liderazgo, sangre fría y determinación inquebrantable, 
                        John-117 se convirtió en una pieza fundamental de la lucha de la humanidad 
                        por sobrevivir a la amenaza del Covenant. Equipado con su icónica armadura 
                        MJOLNIR y acompañado en numerosas misiones por la inteligencia artificial 
                        Cortana, ha demostrado que incluso en las circunstancias más adversas la 
-                       esperanza puede prevalecer.
+                       esperanza puede prevalecer.<br>
 
                        Más que un supersoldado, el Jefe Maestro representa el sacrificio, 
                        la perseverancia y el deber. Su historia es la de un guerrero que 
                        habla poco, actúa cuando es necesario y nunca abandona una misión mientras 
-                       exista una oportunidad de salvar a quienes dependen de él.
-
-                        Clasificación: Spartan-II
-                        Identificación: John-117
-                        Afiliación: UNSC — Comando Espacial de las Naciones Unidas
-                        Especialidad: combate táctico, operaciones especiales y defensa de la humanidad
-                        Estado operativo: listo para la siguiente misión.
+                       exista una oportunidad de salvar a quienes dependen de él.<br>
+                    </p>
+                    <p>
+                        Clasificación: Spartan-II<br>
+                        Identificación: John-117<br>
+                        Afiliación: UNSC — Comando Espacial de las Naciones Unidas<br>
+                        Especialidad: combate táctico, operaciones especiales y defensa de la humanidad<br>
+                        Estado operativo: listo para la siguiente misión.<br>
                      </p>    
                 </section>
             `;
