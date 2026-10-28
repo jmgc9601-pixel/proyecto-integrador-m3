@@ -26,7 +26,7 @@ export default async function handler(req, res) {
         const ai = new GoogleGenAI({
             apiKey: process.env.GEMINI_API_KEY,
             httpOptions: {
-                timeout: 20000,
+                timeout: 50000,
                 retryOptions: {
                 attempts: 1
              }
