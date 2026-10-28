@@ -140,5 +140,6 @@ El código fuente se encuentra en GitHub:
 
 ## Autor
 
-Juan Garcia
+Juan Garcia,
+
 Proyecto académico correspondiente al módulo M3.
